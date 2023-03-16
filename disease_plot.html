@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <title>Weekly Infectious Disease Bulletin Cases</title>
+</head>
+<body>
+    <section class="container _landing">
+        <div class="section _plot">
+            <div id="disease_plot"></div>
+        </div>
+        <div class="section _info bg-gradient">
+            <div class="section-heading">
+                <h1>Singapore Weekly Infectious Disease Bulletin</h1>
+                <select id="selectButton"></select>
+            </div>
+            <p class="attribution">
+                Data Source: <a href="https://data.gov.sg/dataset/weekly-infectious-disease-bulletin-cases">Ministry of Health, Singapore</a>
+                <br/>
+                License: Singapore Open Data Licence
+                <br/>
+                Coverage: January 1, 2012 to December 31, 2022
+            </p>
+        </div>
+    </section>
+
+    <script src="./disease_plot.js"></script>
+</body>
+</html>

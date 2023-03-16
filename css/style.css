@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,800;1,200;1,400;1,800&family=Unbounded:wght@200;400;800&display=swap');
+
+:root {
+    /* Font Family */
+    --global--font-primary: "Poppins", sans-serif;
+    --heading--font: 'Unbounded', cursive;
+
+    /* Font Size */
+    --global--font-size-h1: 8.4rem;
+    --global--font-size-h2: 3.6rem;
+    --global--font-size-h3: 2.0rem;
+    --global--font-size-p: 1.4rem;
+    --global--letter-spacing: normal;
+
+    /* Font Weight */
+    --global--font-weight-regular: 400;
+    --global--font-weight-emphasis: 700;
+
+    /* Spacing & Sizing */
+    --global--spacing-primary: 4rem;
+    --global--spacing-secondary: 1rem;
+    --global--sizing-icon: 2.4rem;
+    --global--sizing-icon-L: 3.6rem; 
+    --global--border-radius: 3.6rem;
+
+    /* Colour */
+    --bg-dark: #363535;
+    --bg-yellow:#e1b82f;
+    --bg-red:#ff5276;
+}
+
+/* Container */
+html { 
+    font-size: 10px; 
+    scroll-behavior: smooth;
+}
+html {
+    scroll-snap-type: y mandatory;
+}
+body {
+    font-size: var(--global--font-size-p);
+    font-family: var(--global--font-primary);
+}
+html, body, section {
+    block-size: 100%;
+} 
+
+/* Typography */
+h1, .h1{
+    font-size: var(--global--font-size-h1);
+    margin: 0 0 var(--global--spacing-primary);
+    /* font-weight: 400; */
+    font-style: italic;
+    /* text-transform: uppercase; */
+}
+h2, .h2{
+    font-size: var(--global--font-size-h2);
+    font-weight: var(--global--font-weight-regular);
+}
+h3, .h3{
+    font-size: var(--global--font-size-h3);
+}
+p{
+    line-height: 2rem;
+}
+a, a:visited{
+    color: white;
+}
+.attribution{
+    font-style: italic;
+}
+.attribution a{
+    color: white;
+}
+svg{
+    margin: auto;
+    display: block;
+    overflow: visible;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+}
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.container {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    background: var(--bg-dark);
+}
+
+/* Section */
+.section{
+    padding: var(--global--spacing-primary);
+    color: white;
+    flex: 1;
+}
+.section._plot{
+    flex: 2;
+}
+.section._info{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.bg-gradient{
+    background: linear-gradient(30deg, var(--bg-red), var(--bg-yellow));
+}
+.progress {
+    animation: 6s linear infinite alternate progress;
+  }
+@keyframes progress {
+    from {
+      background-color: var(--bg-red);
+    }
+  
+    to {
+      background-color: var(--bg-yellow);
+    }
+  }
+.label{
+    text-anchor: end;
+    transform: rotate(35deg);
+    transform-box: fill-box;
+    transform-origin: right;
+    pointer-events: none;
+}
+
+#selectButton{
+    font-size:var(--global--font-size-h3);
+    height: 5.6rem;
+    padding: 1rem;
+    border:#363535 solid 2px;
+    border-radius: 2px;
+    /** for the dropdown indicator */
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+#selectButton:focus{
+    background-repeat: no-repeat;
+    border-color: var(--bg-red);
+    outline: 0;
+}
+.tooltip{
+    position:absolute;
+    background-color: white;
+    color: black;
+    border: solid;
+    border-width: 1px;
+    padding: 2rem;
+    width: 24rem;
+}
+.tile:hover{
+    cursor: pointer;
+    margin-top: -2;
+}
+#disease_plot{
+    position: relative;
+}
+.diseaseName{
+    font-size: 2.4rem;
+}
+.legend{
+    margin-right: 0;
+}
+.legend .tick line{
+    stroke:var(--bg-dark);
+}
